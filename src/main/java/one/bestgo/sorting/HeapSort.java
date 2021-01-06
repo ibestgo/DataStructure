@@ -11,6 +11,8 @@ public class HeapSort {
     System.out.println(Arrays.toString(a));
   }
 
+  // Time : O(NLogN). Unlike quicksort, no worst-case O(n^2) complexity. In practice Quicksort is faster
+  // Space: O(1)
   public static void heapSort(int[] a) {
     int len = a.length;
     while(len > 1) {
