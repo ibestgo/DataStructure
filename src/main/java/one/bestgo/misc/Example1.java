@@ -1,4 +1,4 @@
-package one.bestgo;
+package one.bestgo.misc;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -7,8 +7,22 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Example1 {
+  public int size = 9;
 
-  public Example1() {
+  public static void main(String[] args) throws Exception {
+    new Example1().test6();
+  }
+
+  public void test6() {
+    int count = 1;
+    Runnable action = new Runnable() {
+      @Override
+      public void run() {
+        System.out.println("Runnable with captured variables: " + (size + count)); // 10
+      }
+    };
+
+    new Thread(action).start();
   }
 
   public void test5() throws InterruptedException {
@@ -102,10 +116,5 @@ public class Example1 {
     } else {
       return n * fact(n-1);
     }
-  }
-
-  public static void main(String[] args) throws Exception {
-    Example1 example = new Example1();
-    example.test4();
   }
 }
