@@ -1,4 +1,4 @@
-package one.bestgo.search;
+package one.bestgo.search.binary;
 
 public class BinarySearchTree {
 
