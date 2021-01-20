@@ -5,12 +5,19 @@ import java.util.Arrays;
 public class QuickSort {
   public static void main(String[] args) {
     //int[] a = { 13, 12, 13, 7};
-    int[] a = { 6, 5, 9, 10, 13, 20, 15, 2, 1, 0, 13};
+    //int[] a = { 6, 5, 9, 10, 13, 20, 15, 2, 1, 0, 13};
+    int size = 5;
+    int[] a = new int[size];
+    for(int i=0; i<size; i++) {
+      a[i] = (int)(Math.random()*1000);
+    }
+
+    System.out.println(Arrays.toString(a));
     sort(a);
     System.out.println(Arrays.toString(a));
   }
 
-  private static void sort(int[] a) {
+  public static void sort(int[] a) {
     quickSort(a, 0, a.length-1);
   }
 
