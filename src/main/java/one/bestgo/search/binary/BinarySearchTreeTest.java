@@ -80,10 +80,10 @@ class BinarySearchTree {
   }
 
   private void printInOrder(Node node) {
-    if(node != null) {
-      printInOrder(node.left);
-      System.out.println(node.value);
-      printInOrder(node.right);
-    }
+    if(node == null) return;
+
+    printInOrder(node.left);
+    System.out.println(node.value);
+    printInOrder(node.right);
   }
 }

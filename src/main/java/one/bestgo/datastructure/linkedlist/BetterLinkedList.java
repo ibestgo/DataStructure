@@ -1,4 +1,4 @@
-package one.bestgo.lib;
+package one.bestgo.datastructure.linkedlist;
 
 import java.util.NoSuchElementException;
 

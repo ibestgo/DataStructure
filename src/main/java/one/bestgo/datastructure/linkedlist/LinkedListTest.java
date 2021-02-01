@@ -1,11 +1,10 @@
-package one.bestgo.array;
-
-import one.bestgo.lib.MyLinkedList;
+package one.bestgo.datastructure.linkedlist;
+import one.bestgo.trash.MyLinkedList;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class HelloLinkedList {
+public class LinkedListTest {
 
   public static void main(String[] args) {
     //usecase1();
@@ -13,15 +12,15 @@ public class HelloLinkedList {
   }
 
   private static void usecase2() {
-    MyLinkedList list = new MyLinkedList();
+    BetterLinkedList list = new BetterLinkedList();
     list.addLast(10);
     list.addLast(20);
     list.addLast(30);
     list.addFirst(5);
-    list.deleteLast();
+    //list.deleteLast();
     System.out.println("Contained 10? "+list.contains(10));
 
-    list.print();
+    //list.print();
   }
 
   private static void usecase1() {

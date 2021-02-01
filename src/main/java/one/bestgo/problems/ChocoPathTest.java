@@ -48,7 +48,7 @@ public class ChocoPathTest {
     Node e = new Node("E", 3);
     Node f = new Node("F", 4);
     Node g = new Node("G", 2);
-    Node h = new Node("H", 100);
+    Node h = new Node("H", 1);
     Node i = new Node("I", 3);
     Node j = new Node("J", 9);
     a.connectTo(b);
