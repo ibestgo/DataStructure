@@ -20,13 +20,14 @@ public class ChocoPathTest {
     ArrayDeque<Node> queue = new ArrayDeque<>();
     queue.add(start);
 
+    // NOT ACCURATE.
     while(!queue.isEmpty()) {
       Node node = queue.remove();
       int longest = 0;
       Node longestNode = null;
       for(Node child: node.getOutBounds()) {
-        if(node.getValue() > longest) {
-          longest = node.getValue();
+        if(child.getValue() > longest) {
+          longest = child.getValue();
           longestNode = child;
         }
       }
@@ -47,7 +48,7 @@ public class ChocoPathTest {
     Node e = new Node("E", 3);
     Node f = new Node("F", 4);
     Node g = new Node("G", 2);
-    Node h = new Node("H", 1);
+    Node h = new Node("H", 100);
     Node i = new Node("I", 3);
     Node j = new Node("J", 9);
     a.connectTo(b);
