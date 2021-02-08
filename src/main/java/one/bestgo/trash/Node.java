@@ -1,4 +1,4 @@
-package one.bestgo.lib;
+package one.bestgo.trash;
 
 public class Node {
   private Node next;

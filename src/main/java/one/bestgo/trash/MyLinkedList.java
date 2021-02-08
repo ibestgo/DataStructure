@@ -1,4 +1,4 @@
-package one.bestgo.lib;
+package one.bestgo.trash;
 
 // BAD BAD Design. Look ar BetterLinkedList
 public class MyLinkedList {

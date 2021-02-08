@@ -20,7 +20,7 @@ public class BinarySerachTest {
   }
 
   private static int binarySearch(int[] a, int begin, int end, int target) {
-    if(begin> end) return -1;
+    if(begin > end) return -1;
 
     int m = (begin+end)/2;
 
