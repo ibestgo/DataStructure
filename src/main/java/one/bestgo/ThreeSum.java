@@ -5,6 +5,40 @@ import java.util.*;
 // https://leetcode.com/problems/3sum
 public class ThreeSum {
 
+  // passed
+  public List<List<Integer>> threeSum(int[] nums) {
+    List<List<Integer>> ret = new ArrayList<>();
+    if(nums.length < 3) return ret;
+    Arrays.sort(nums);
+
+    Map<String, List<Integer>> map = new HashMap<>();
+    for(int i=0; i<nums.length-2; i++) {
+      int x = i+1;
+      int y = nums.length-1;
+      while(x<y && x<nums.length-1) {
+        if(nums[i]+nums[x]+nums[y] == 0) {
+          String key = nums[i]+"#"+nums[x]+"#"+nums[y];
+          if(!map.containsKey(key)) {
+            map.put(key, new ArrayList<Integer>());
+            map.get(key).add(nums[i]);
+            map.get(key).add(nums[x]);
+            map.get(key).add(nums[y]);
+          }
+        }
+
+        int requiredSum = 0-nums[i];
+        if(requiredSum > (nums[x]+nums[y]))
+          x++;
+        else
+          y--;
+      }
+    }
+
+    ret.addAll(map.values());
+    System.out.println(ret);
+    return ret;
+  }
+
   // Failed due to time limitation
   public List<List<Integer>> threeSum2(int[] nums) {
     List<List<Integer>> ret = new ArrayList<>();
