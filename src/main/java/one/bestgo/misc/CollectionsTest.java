@@ -3,6 +3,42 @@ package one.bestgo.misc;
 import java.util.*;
 
 public class CollectionsTest {
+
+  private void test1() {
+    Set<List<Integer>> ret = new HashSet<>();
+
+    List<Integer> l1 = new ArrayList<>();
+    l1.add(3);
+    l1.add(5);
+    Collections.sort(l1); // [3, 5]
+
+    List<Integer> l2 = new ArrayList<>();
+    l2.add(5);
+    l2.add(3);
+    Collections.sort(l2); // [3, 5]
+
+    ret.add(l1);
+    ret.add(l2);
+
+    System.out.println(ret.size()); // 1
+    System.out.println(ret);        // [[3, 5]]
+  }
+
+  private void test2() {
+    int k=0;
+    for(int i=0; i<k; i++) {      // for loop checks the condition first before entering the loop.
+      System.out.println("> "+i); // nothing will be printed.
+    }
+  }
+
+  private void test3() {
+    Set<List<Integer>> ans = new HashSet<>();
+
+    // if return type is list of list, convert a set of list to list of list:
+    List<List<Integer>> ret = new ArrayList(ans);
+    //List<List<Integer>> ret = new ArrayList(ans.values());  // Error. Set doesn't have $values method
+  }
+
   public static void main(String[] args) {
 
     Queue<Integer> queue = new ArrayDeque<>();

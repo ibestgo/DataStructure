@@ -1,7 +1,21 @@
-package one.bestgo;
+package one.bestgo.leetcode;
 
 // https://leetcode.com/problems/battleships-in-a-board
 public class BattleShipCount {
+
+  public int countBattleships(char[][] board) {
+    int numShips = 0;
+    for(int i=0; i<board.length; i++) {
+      for(int j=0; j<board[i].length; j++) {
+        if(board[i][j] == 'X') {
+          if((j>0 && board[i][j-1] == 'X') || (i>0 && board[i-1][j] == 'X')) continue;
+          numShips++;
+        }
+      }
+    }
+    return numShips;
+  }
+
   public int countBattleshipsBetterOne(char[][] board) {
     int numShips = 0;
     for(int x=0; x<board.length; x++) {
@@ -16,7 +30,8 @@ public class BattleShipCount {
     }
     return numShips;
   }
-    public int countBattleships(char[][] board) {
+
+  public int countBattleships1(char[][] board) {
     int numShips = 0;
 
     for(int x=0; x<board.length; x++) {

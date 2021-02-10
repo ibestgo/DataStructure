@@ -2,7 +2,6 @@ package one.bestgo.problems;
 
 import java.util.*;
 
-
 /*
 ## Scoring a Board Game
 
@@ -17,7 +16,7 @@ Each turn, the player is allowed to remove one piece that shares either a row or
 At the end of the game, the score of the board is how many pieces are left on the board
 
 Your goal is to write an algorithm that finds the lowest score any given board can score.
-The alogorithm does NOT need to tell you how to achieve the lowest score, jusr what the lowest score is.
+The algorithm does NOT need to tell you how to achieve the lowest score, just what the lowest score is.
 
 Hint: Play through the example board manually. Think about how pieces are connected.
  */

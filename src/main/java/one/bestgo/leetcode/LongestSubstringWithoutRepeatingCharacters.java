@@ -1,4 +1,4 @@
-package one.bestgo;
+package one.bestgo.leetcode;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,9 +6,47 @@ import java.util.Set;
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
 public class LongestSubstringWithoutRepeatingCharacters {
 
+  public static void main(String[] args) {
+    //new LongestSubstringWithoutRepeatingCharacters().test("abcabcbb");
+  }
+
+  public int lengthOfLongestSubstring(String s) {
+    int len = s.length();
+    if(len < 2) return len;     // would be better
+
+    int max = 0;                // Now at least 2
+    int b = 0;
+    for(int e = 1; e < len; e++) {
+      for(int j=b; j<e; j++) {
+        if(s.charAt(j) == s.charAt(e)) {
+          b = j+1;
+          break;
+        }
+      }
+      max = Math.max(max, e-b+1);
+    }
+
+//         while(b < e && e < len) {
+//             for(int i=b; i<e; i++) {
+//                 if(s.charAt(i) == s.charAt(e)) {
+//                     b = i+1;
+//                     break;
+//                 }
+//             }
+
+//             // System.out.println(s.substring(b, e+1)); // note e+1
+//             //int l = e-b+1;            // OK but use Math.max() for simple
+//             //if(l > max) max = l;
+//             max = Math.max(max, e-b+1);
+//             e++;
+//         }
+
+    return max;
+  }
+
   // Official Solution: Best Solution
   // Time: O(n)
-  public int lengthOfLongestSubstring(String str) {
+  public int lengthOfLongestSubstringOfficial(String str) {
     int len = str.length();
     int max = 0;
     int[] index = new int[128];
@@ -126,4 +164,35 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
     return j-i+1;
   }
+
+  //  public void test2(String s) {
+//    int len = s.length();
+//    int b = 0;  // begin index
+//    int e = 0;  // end index
+//    while (e < len) {  // end index
+//      for(int j=b; j<e; j++) {    // whenever e is increased, search [b, e-1] for s[e]
+//        if(s.charAt(j) == s.charAt(e)) {
+//          b = j+1;
+//          break;
+//        }
+//      }
+//      System.out.println(s.substring(b, e+1));
+//      e++;
+//    }
+//  }
+//
+//  public void test(String s) {
+//    int len = s.length();
+//    int b = 0;  // begin index
+//
+//    for(int e=0; e < len; e++) {  // end index
+//      for(int j=b; j<e; j++) {    // whenever e is increased, search [b, e-1] for s[e]
+//        if(s.charAt(j) == s.charAt(e)) {
+//          b = j+1;
+//          break;
+//        }
+//      }
+//      System.out.println(s.substring(b, e+1));
+//    }
+//  }
 }

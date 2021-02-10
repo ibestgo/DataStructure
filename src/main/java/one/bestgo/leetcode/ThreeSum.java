@@ -1,4 +1,4 @@
-package one.bestgo;
+package one.bestgo.leetcode;
 
 import java.util.*;
 
